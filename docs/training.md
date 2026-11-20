@@ -46,7 +46,8 @@ What's missing:
    model-written code and is refused without `--allow_code_exec`.
 4. **Swarm SFT** (`python -m exealm.train.sft --swarm N --answer_agent I`): train on the designated agent's answers
    through the shared board. The loop is tested on `tiny`. See the [swarm SFT data format](swarms.md#swarm-sft).
-5. **Swarm RL:** whole-swarm attempts with a shared reward are planned ([swarms.md](swarms.md)).
+5. **Swarm GRPO** (`python -m exealm.train.grpo --swarm N --answer_agent I`): sample whole-swarm attempts, score
+   one answer per attempt, and train every agent with the shared advantage. See [swarm GRPO usage](swarms.md#swarm-grpo).
 
 The bet: a 0.1B model alone won't be a strong general assistant, but a swarm of them, each looking things up through
 its own retrieval and sharing what it finds on the board, should be able to take on problems far larger than any one
